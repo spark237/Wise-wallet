@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wise Wallet - Smart Budget Tracker</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              primary: {
+                50: '#eef2ff',
+                100: '#e0e7ff',
+                500: '#6366f1',
+                600: '#4f46e5',
+                700: '#4338ca',
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      /* Custom scrollbar for transaction list */
+      .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+      }
+      .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+      }
+      
+      /* Simple CSS Confetti */
+      .confetti-piece {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: #f43f5e;
+        top: -10px;
+        opacity: 0;
+      }
+      .confetti-piece:nth-child(1) { left: 10%; animation: fall 2.5s infinite ease-out; background: #6366f1; }
+      .confetti-piece:nth-child(2) { left: 30%; animation: fall 3s infinite ease-out 0.5s; background: #10b981; }
+      .confetti-piece:nth-child(3) { left: 50%; animation: fall 2.8s infinite ease-out 0.2s; background: #f59e0b; }
+      .confetti-piece:nth-child(4) { left: 70%; animation: fall 3.2s infinite ease-out 0.8s; background: #06b6d4; }
+      .confetti-piece:nth-child(5) { left: 90%; animation: fall 2.6s infinite ease-out 1.2s; background: #ec4899; }
+
+      @keyframes fall {
+        0% { top: -10px; transform: rotate(0deg); opacity: 1; }
+        100% { top: 100%; transform: rotate(360deg); opacity: 0; }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "recharts": "https://aistudiocdn.com/recharts@^3.5.1",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-slate-50 text-slate-900 antialiased">
+    <div id="root"></div>
+  </body>
+</html>
